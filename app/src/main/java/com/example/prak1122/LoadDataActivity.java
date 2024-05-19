@@ -16,9 +16,6 @@ public class LoadDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_load_data);
         // Находим TextView для отображения результата
         TextView resultView = findViewById(R.id.result);
-
-        // Вызываем метод onClickLoadData сразу после установки ContentView
-        onClickLoadData(resultView);
     }
 
     public void onClickLoadData(View view) {
@@ -38,7 +35,7 @@ public class LoadDataActivity extends AppCompatActivity {
                 do {
                     int id = cursor.getInt(idIndex);
                     String name = cursor.getString(nameIndex);
-                    strBuild.append("\n" + id + "-" + name);
+                    strBuild.append("\n").append(id).append("-").append(name);
                 } while (cursor.moveToNext());
                 // Отображаем результат в TextView
                 resultView.setText(strBuild.toString());
